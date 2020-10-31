@@ -1,1 +1,3 @@
-export { bookService } from './book.service';
+import { outletService } from './outlet.service';
+
+export { outletService };

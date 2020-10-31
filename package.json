@@ -3,15 +3,15 @@
     "description": "A template to kick-start Node.js projects using ES6 and RESTful API best practices",
     "version": "1.0.0",
     "main": "dist/server.js",
-    "author": "Naresh Bhatia",
+    "author": "Siddhu Vydyabhushana",
     "license": "MIT",
-    "homepage": "https://github.com/archfirst/node-es6-rest-template",
+    "homepage": "https://github.com/vydyas/OutletService.git",
     "repository": {
         "type": "git",
-        "url": "https://github.com/archfirst/node-es6-rest-template.git"
+        "url": "https://github.com/vydyas/OutletService.git"
     },
     "scripts": {
-        "start": "nodemon --exec babel-node --inspect src/server.js",
+        "start": "babel-node --inspect src/server.js",
         "prebuild": "rimraf dist",
         "build": "npm run lint && babel src --out-dir dist && npm run copy-to-dist",
         "serve": "node dist/server.js",
@@ -20,12 +20,17 @@
         "copy-to-dist": "copyfiles --up 1 src/openapi.json dist"
     },
     "dependencies": {
+        "@tmcw/togeojson": "^4.2.0",
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "dotenv": "^8.0.0",
         "express": "^4.17.1",
         "express-async-handler": "^1.1.4",
-        "swagger-ui-express": "^4.0.6"
+        "geocoding": "^1.0.5",
+        "geolib": "^3.3.1",
+        "robust-point-in-polygon": "^1.0.3",
+        "swagger-ui-express": "^4.0.6",
+        "xmldom": "^0.4.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.4.4",

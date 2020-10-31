@@ -1,7 +1,8 @@
+import { config as envConfig } from 'dotenv';
+import datagenerator from './utils/datagenerator';
 // -----------------------------------------------------------------------------
 // Load environment variables from the .env file before doing anything else
 // -----------------------------------------------------------------------------
-import { config as envConfig } from 'dotenv';
 envConfig();
 
 // --- Remaining imports -----
@@ -14,7 +15,11 @@ import { createApp } from './create-app';
 const port = 8080; // can be mapped using docker
 const app = createApp();
 const server = createServer(app);
-server.listen(port, () => console.log('Listening on port ' + port));
+
+server.listen(port, () => {
+    console.log('Listening on port ' + port);
+    datagenerator();
+});
 
 // -----------------------------------------------------------------------------
 // When SIGINT is received (i.e. Ctrl-C is pressed), shutdown services
