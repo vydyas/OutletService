@@ -9,7 +9,7 @@ outletRouter.post(
     '/',
     asyncHandler(async (req, res) => {
         try {
-            const { lat, long } = req.params;
+            const { lat, long } = JSON.parse(JSON.stringify(req.body));
             const outlet = await outletService.findOutlet(lat, long);
             res.send(outlet);
         } catch (error) {
